@@ -1,0 +1,428 @@
+<resources>
+    <string name="host_sign">我的签名就是把我的世界直播给你们</string>
+    <string name="host_phone">iPhone6S Plus</string>
+    <string name="host_funs">粉丝数:9090</string>
+    <string name="host_follow">关注:7089</string>
+    <string name="host_admire">赞:11.3w</string>
+
+    <string name="live_report_tips">请选择您的举报原因</string>
+    <string name="live_report_dirty">垃圾营销</string>
+    <string name="live_report_false">不实信息</string>
+    <string name="live_report_virus">有害信息</string>
+    <string name="live_report_illegal">违法信息</string>
+    <string name="live_report_yellow">淫秽信息</string>
+
+    <!-- live fragment-->
+    <string name="live_unknown">未知</string>
+    <string name="live_titile">最新直播</string>
+    <string name="dialog_members_tips">邀请互动连线（最多可与三个成员进行互动直播）</string>
+
+    <string name="live_host_leave">主播可能暂时离开</string>
+
+    <string name="ping_ing">测速中</string>
+    <string name="ping_progress">测速进度</string>
+    <string name="ping_speed_test">网络测速</string>
+    <string name="ping_start">开始测速</string>
+    <string name="ping_no_server">获取测速列表失败，请稍后重试</string>
+    <string name="ping_time">平均时延</string>
+    <string name="ping_miss_up">上行丢包率</string>
+    <string name="ping_miss_down">下行丢包率</string>
+    <string name="ping_cancel">取消</string>
+    <string name="ping_TEL">电信</string>
+    <string name="ping_CMCC">移动</string>
+    <string name="ping_CNC">联通</string>
+    <string name="ping_SH">上海</string>
+    <string name="ping_SZ">深圳</string>
+    <string name="ping_CD">成都</string>
+    <string name="ping_TJ">天津</string>
+    <string name="ping_NJ">南京</string>
+    <string name="ping_HZ">杭州</string>
+    <string name="ping_GZ">广州</string>
+    <string name="str_record">录制回放</string>
+    <string name="str_loading_record">正在努力获取录制视频列表。。。</string>
+    <string name="str_rec_nobody">未知</string>
+    <string name="str_push_title">推流地址</string>
+    <string name="str_push_copy">复制地址</string>
+    <string name="str_push_share">分享</string>
+    <string name="live_btn_link">主播串门</string>
+    <string name="live_btn_unlink">取消串门</string>
+    <string name="live_link_title">邀请主播</string>
+    <string name="str_dlg_link_tips">请输入主播id</string>
+    <string name="str_link_start_tips">已同意您的跨房连麦邀请，是否现在开始跨房连麦?</string>
+    <string name="str_link_req_tips">邀请您跨房连麦，是否同意?</string>
+    <string name="str_link_refuse_tips">已拒绝您的跨房连麦邀请!</string>
+    <string name="str_qav_beauty">美颜</string>
+    <string name="str_qav_white">美白</string>
+    <string name="str_btn_link">跨房连麦</string>
+    <string name="str_dt_change_role">分辨率</string>
+    <string name="str_dt_hd">高清</string>
+    <string name="str_dt_sd">标清</string>
+    <string name="str_dt_ld">流畅</string>
+    <string name="str_dt_filter">滤镜</string>
+    <string name="str_dt_magic">挂件</string>
+    <string name="str_dt_voice">变声</string>
+    <string name="str_beauty_type">美颜方案</string>
+    <string name="str_video_qulity">观看模式</string>
+    <string name="str_video_sd">清晰</string>
+    <string name="str_video_ld">流畅</string>
+    <string name="str_link_limit">已达到跨房连麦上限</string>
+    <string name="str_title_logupload">上报日志</string>
+    <string name="str_log_upload_hit">0-当天，1-昨天，2-前天，以此类推</string>
+    <string name="str_log_upload_tips">输入要上报的日志的日期</string>
+    <string name="str_btn_log_upload">上报</string>
+    <string name="str_tips_link_limit">已经达到跨房连麦上限</string>
+    <string name="str_beauty_not_support">ILive美颜暂不支持，敬请期待</string>
+    <string name="str_exit">退出登录</string>
+
+    <string name="live_btn_par">房间信息</string>
+    <string name="live_btn_record">录制</string>
+    <string name="live_btn_push">开启推流</string>
+    <string name="live_btn_stop_push">关闭推流</string>
+    <string name="live_btn_stop_record">停录</string>
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+    <string name="test_game_name">大话西游</string>
+    <string name="test_game_size">213M</string>
+    <string name="test_game_status">12.12日开服</string>
+    <string name="test_game_type1">角色</string>
+    <string name="test_game_type2">3D</string>
+    <string name="test_game_type3">可爱</string>
+    <string name="test_game_type4">竞技</string>
+    <string name="test_game_type5">萌萌</string>
+    <string name="default_login_hint">登录/注册</string>
+    <string name="update_phone_show">当前已绑定手机账户：%s</string>
+    <string name="update_email_show">当前已绑定邮箱：%s</string>
+    <string name="test_large_text">游戏介绍游戏介绍游游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游
+        戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍游戏介绍</string>
+    <string name="smart_install_accessibility_service_description">辅助功能安装服务</string>
+    <string name="pay_desc">注：充值成功以后，可到我的游戏中查询游戏币余额。
+        \n网上银行充值说明：
+        \n1、您必须开通了网上银行业务；
+        \n2、充值最多不能超过10000元。
+        \n3、如果您用信用卡支付，请确认该信用卡的网上交易限额大于等于您的充值金额；
+        \n4、充值的游戏币只限于该款游戏内使用。
+        \n5、充值时务必确认好您的充值金额及充值游戏，准确无误后再进行充值，避免输错金额或游戏选择错误导致的失误，如因未仔细确认金额造成的充值问题或充错游戏，我们将不予处理此类退款申诉。
+    </string>
+    <string name="notice_desc">
+        公会建设靠大家，我们做好四件事：
+        \n1、拉人，多分享公会名片到游戏Q群贴吧，扩大队伍
+        \n2、放端，会长的公会端一上架，大家分享游戏页面到Q群贴吧。安装app的玩家会自动更新提醒
+        \n3、带人，多组织活动，一键召集，活动闹钟会通知到所有玩家
+        \n4、福利，有礼包福利利用会长后台上架，游戏群里可以领这个是管理公会app，要管理找小袁
+    </string>
+    <string-array name="game_feedback">
+        <item>色情内容</item>
+        <item>携带病毒</item>
+        <item>恶意扣费</item>
+        <item>含不良插件</item>
+        <item>启动不了</item>
+        <item>其他</item>
+    </string-array>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_bar_back">返回</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="agree">同意</string>
+    <string name="agreed">已同意</string>
+    <string name="refuse">拒绝</string>
+    <string name="refused">已拒绝</string>
+    <string name="done">完成</string>
+    <string name="friend_allow_all">允许任何人添加</string>
+    <string name="friend_refuse_all">拒绝任何人添加</string>
+    <string name="friend_need_confirm">需验证</string>
+    <string name="default_group_name">默认分组</string>
+    <string name="change_group_error">修改分组失败</string>
+    <string name="people">人</string>
+    <string name="login_error">登录失败，请稍后重试</string>
+    <string name="login_error_timeout">登录失败，当前无网络</string>
+    <string name="login_succ">登录成功</string>
+    <string name="kick_logout">你的账号已在其他终端登录,重新登录</string>
+    <string name="operate_fail">操作失败</string>
+    <string name="need_permission">您需要开启权限,并重启应用</string>
+    <string name="save_succ">保存成功</string>
+    <string name="download_fail">下载失败</string>
+    <string name="downloading">正在下载，请稍候</string>
+    <string name="save_fail">保存失败</string>
+    <string name="save_exist">文件已存在</string>
+    <string name="tls_expire">账号登录已过期，请重新登录</string>
+    <string name="env_normal">当前连接正式环境</string>
+    <string name="env_test">当前连接测试环境</string>
+    <string name="file_not_found">未找到文件，请稍后重试</string>
+    <string name="google_service_not_available">google推送服务不可用，请检查google play设置</string>
+
+    <!-- home activity -->
+    <string name="send_success">发送成功</string>
+
+    <!-- home activity -->
+    <string name="home_conversation_tab">会话</string>
+    <string name="home_setting_tab">设置</string>
+
+    <!-- conversation fragment -->
+    <string name="conversation_system">系统消息</string>
+    <string name="conversation_system_friend">新朋友</string>
+    <string name="conversation_system_group">群组消息</string>
+    <string name="conversation_del">删除会话</string>
+    <string name="conversation_draft">[草稿]</string>
+
+    <!-- contact fragment -->
+    <string name="home_contact_tab">联系人</string>
+    <string name="new_friend">新朋友</string>
+    <string name="public_group">公开群</string>
+    <string name="discuss_group">讨论组</string>
+    <string name="chatroom">聊天室</string>
+    <string name="addfriend">添加好友</string>
+    <string name="contact_add_group">添加群组</string>
+    <string name="manangergroup">管理分组</string>
+
+
+    <!-- settings fragment -->
+    <string name="setting_logout">退出登录</string>
+    <string name="setting_logout_fail">退出登录失败，请稍后重试</string>
+    <string name="setting_friend_confirm">好友申请</string>
+    <string name="setting_black_list">黑名单</string>
+    <string name="setting_message_notify">消息提醒</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_friend_need_confirm">需验证</string>
+    <string name="setting_nick_name_change">修改昵称</string>
+    <string name="setting_friend_confirm_change_err">修改验证类型失败</string>
+
+
+    <!-- Add newfriend activity -->
+    <string name="search_default">搜索</string>
+    <string name="search_cancel">取消</string>
+    <string name="search_hint">搜索ID或手机号</string>
+    <string name="search_no_result">很抱歉，没有找到符合内容</string>
+
+    <!-- Add newfriend activity -->
+    <string name="title_addfri">添加好友</string>
+    <string name="add_detail_ID">帐号ID</string>
+    <string name="add_detail_name">备注名</string>
+    <string name="add_detail_group">分组</string>
+    <string name="add_detail_message">附加消息</string>
+    <string name="add_friend_send">发送添加好友请求</string>
+    <string name="add_friend_succeed">请求已发送</string>
+    <string name="add_friend_added">已添加好友</string>
+    <string name="add_friend_refuse_all">对方拒绝添加任何人为好友</string>
+    <string name="add_friend_to_blacklist">我在对方的黑名单中</string>
+    <string name="add_friend_error">添加好友失败，请稍后重试</string>
+    <string name="add_friend_del_black_list">添加失败，该用户在你的黑名单中，是否将该用户从黑名单中移除（你需要在移除成功后重发添加好友请求）</string>
+    <string name="add_friend_del_black_err">移出黑名单失败</string>
+    <string name="add_friend_del_black_succ">移出黑名单成功</string>
+
+    <!-- Manager group activity -->
+    <string name="title_manager_group">分组管理</string>
+    <string name="add_new_group">添加分组</string>
+    <string name="add_dialog_title">添加分组</string>
+    <string name="add_dialog_subtitle">请输入新分组的名称</string>
+    <string name="add_dialog_null">分组名称不能为空</string>
+    <string name="title_confirm_delete_group">确认删除改分组吗？</string>
+    <string name="delete_dialog_subtitle">删除分组</string>
+    <string name="delete_dialog_subtitle_sur">,该分组好友将移动到默认分组</string>
+    <string name="delete_group_succ">删除分组成功</string>
+    <string name="add_group_succ">添加分组成功</string>
+    <string name="add_group_error_existed">添加失败，分组已存在</string>
+    <string name="add_group_error_limit">添加失败，分组达到上限</string>
+    <string name="add_group_error">添加分组失败</string>
+    <string name="del_group_error">删除分组失败</string>
+
+
+    <!-- chat activity -->
+    <string name="chat_image">图片</string>
+    <string name="chat_file">文件</string>
+    <string name="chat_photo">拍摄</string>
+    <string name="chat_video">小视频</string>
+    <string name="chat_press_talk">按住 说话</string>
+    <string name="chat_release_send">松开 结束</string>
+    <string name="chat_up_finger">手指上滑，取消发送</string>
+    <string name="chat_audio_too_short">录音过短，请重试</string>
+    <string name="chat_video_too_short">录制过短，请重试</string>
+    <string name="chat_resend">重新发送</string>
+    <string name="chat_del">删除</string>
+    <string name="chat_save">保存</string>
+    <string name="chat_file_too_large">文件过大，发送失败</string>
+    <string name="chat_file_not_exist">文件不存在，发送失败</string>
+    <string name="chat_image_preview_title">图片预览</string>
+    <string name="chat_image_preview_send">发送</string>
+    <string name="chat_image_preview_load_err">图片加载失败</string>
+    <string name="chat_image_preview_ori">原图发送</string>
+    <string name="chat_typing">对方正在输入…</string>
+    <string name="chat_content_bad">内容含有敏感词</string>
+
+    <!-- profile activity -->
+    <string name="profile_detail">详细资料</string>
+    <string name="profile_back">返回</string>
+    <string name="profile_id">账号</string>
+    <string name="profile_remark">备注名</string>
+    <string name="profile_black">加入黑名单</string>
+    <string name="profile_remark_edit">修改备注</string>
+    <string name="profile_chat">发送消息</string>
+    <string name="profile_del">删除好友</string>
+    <string name="profile_group">添加分组</string>
+    <string name="profile_now_group">所在分组</string>
+    <string name="profile_del_succeed">删除好友成功</string>
+    <string name="profile_del_fail">删除好友失败</string>
+    <string name="profile_black_succ">加入黑名单成功</string>
+
+    <!-- group profile activity -->
+    <string name="chat_setting_title">聊天设置</string>
+    <string name="chat_setting_group_member">群成员</string>
+    <string name="chat_setting_group_id">群组ID</string>
+    <string name="chat_setting_group_name">群名称</string>
+    <string name="chat_setting_group_add_opt">加群方式</string>
+    <string name="chat_setting_group_msg_alert">消息提醒</string>
+    <string name="chat_setting_group_introduce">群介绍</string>
+    <string name="chat_setting_group_all_accept">允许任何人加入</string>
+    <string name="chat_setting_group_all_reject">禁止加入</string>
+    <string name="chat_setting_group_auth">需群主审核</string>
+    <string name="chat_setting_quit">退出群</string>
+    <string name="chat_setting_dismiss">解散群</string>
+    <string name="chat_setting_add">申请加群</string>
+    <string name="chat_setting_dismiss_succ">解散群成功</string>
+    <string name="chat_setting_quit_succ">退出群成功</string>
+    <string name="chat_setting_quit_fail_private">讨论组不能解散</string>
+    <string name="chat_setting_change_err">修改失败</string>
+    <string name="chat_setting_change_group_name">修改群名称</string>
+    <string name="chat_setting_change_group_intro">修改群介绍</string>
+    <string name="chat_setting_no_rev">不接收消息</string>
+    <string name="chat_setting_rev_notify">接收并提醒消息</string>
+    <string name="chat_setting_rev_not_notify">接收不提醒消息</string>
+    <string name="chat_setting_invite_error">邀请群成员失败</string>
+
+
+    <!-- Add newfri activity -->
+    <string name="title_new_fri">新朋友</string>
+    <string name="newfri_agree">同意</string>
+    <string name="newfri_reject">拒绝</string>
+    <string name="newfri_do">操作</string>
+    <string name="newfri_disagree">已拒绝</string>
+    <string name="newfri_accept">已接受</string>
+    <string name="newfri_wait">等待验证</string>
+
+    <!-- message -->
+    <string name="summary_image">[图片]</string>
+    <string name="summary_voice">[语音]</string>
+    <string name="summary_video">[小视频]</string>
+    <string name="summary_file">[文件]</string>
+    <string name="summary_friend_add">请求添加好友</string>
+    <string name="summary_friend_added">我已添加</string>
+    <string name="summary_friend_add_me">请求添加</string>
+    <string name="summary_friend_recommend">推荐添加</string>
+    <string name="summary_me">我</string>
+    <string name="summary_group_apply">申请加群</string>
+    <string name="summary_group_invite">邀请</string>
+    <string name="summary_group_add">加入群</string>
+    <string name="summary_agree">同意</string>
+    <string name="summary_disagree">拒绝</string>
+    <string name="summary_invite_person">邀请人</string>
+    <string name="summary_handle_person">处理人</string>
+    <string name="summary_group_admin_change">管理员变更</string>
+    <string name="summary_group_info_change">群资料变更</string>
+    <string name="summary_group_mem_change">群成员变更</string>
+    <string name="summary_group_mem_add">加入群</string>
+    <string name="summary_group_mem_quit">退出群</string>
+    <string name="summary_group_mem_kick">被踢出群</string>
+    <string name="summary_group_mem_modify">资料变更</string>
+
+    <!-- time -->
+    <string name="time_yesterday">昨天</string>
+    <string name="time_day">日</string>
+    <string name="time_month">月</string>
+    <string name="time_year">年</string>
+    <string name="time_more">99+</string>
+    <string name="title_activity_group_chat_setting">GroupChatSettingActivity</string>
+
+    <!--publicgroup-->
+    <string name="title_public_group">公开群</string>
+    <string name="btn__create_public_group">创建公开群</string>
+    <string name="subtitle_created_public_group">我创建的公开群</string>
+    <string name="subtitle_hosting_public_group">我管理的公开群</string>
+    <string name="subtitle_joined_public_group">我加入的公开群</string>
+
+
+    <!--chatroom-->
+    <string name="title_chatroom">聊天室</string>
+    <string name="btn__create_chatroom">创建聊天室</string>
+    <string name="subtitle_owner_chatrrom">我创建的聊天室</string>
+    <string name="subtitle_hosting_chatroom">我管理的聊天室</string>
+    <string name="subtitle_joined_chatroom">我加入的聊天室</string>
+
+
+    <!--privategroup-->
+    <string name="title_private_group">讨论组</string>
+    <string name="btn__create_private_group">创建讨论组</string>
+    <string name="subtitle_owner_private_group">我创建的讨论组</string>
+    <string name="subtitle_hosting_private_group">我管理的讨论组</string>
+    <string name="subtitle_joined_private_group">我加入的讨论组</string>
+
+
+    <!--creategroup-->
+    <string name="title_create_group">创建群</string>
+    <string name="subtitle_create_group_name">群名称</string>
+    <string name="btn_add_member">添加群成员</string>
+    <string name="title_choose_group_members">选择联系人</string>
+    <string name="create_group_fail">创建群失败</string>
+    <string name="create_group_fail_because_wording">创建失败，群名含有敏感词</string>
+    <string name="create_group_succeed">创建群成功</string>
+    <string name="create_group_need_name">请输入群名称</string>
+
+
+    <!-- change category activity -->
+    <string name="change_category_title">移至分组</string>
+
+    <!-- search group activity -->
+    <string name="search_group_hint">搜索ID或名称</string>
+
+    <!-- edit activity -->
+    <string name="edit_error">修改失败</string>
+
+    <!-- choose activity -->
+    <string name="choose_title">选择联系人</string>
+    <string name="choose_need_one">至少选择一个联系人</string>
+
+    <!-- group member profile activity -->
+    <string name="group_member_profile">成员资料</string>
+    <string name="group_member_quiet">设置禁言</string>
+    <string name="group_member_manage">设为管理员</string>
+    <string name="group_member_card">群名片</string>
+    <string name="group_member_del">移出本群</string>
+    <string name="group_member_del_err">移出群成员失败</string>
+    <string name="group_member_del_succ">移出群成员成功</string>
+    <string name="group_member_manage_set_err">设置管理员失败</string>
+    <string name="group_member_manage_set_type_err">该类型群组不能设置管理员</string>
+    <string name="group_member_manage_set_succ">设置管理员成功</string>
+    <string name="group_member_quiet_ing">禁言中</string>
+    <string name="group_member_quiet_ten_min">十分钟</string>
+    <string name="group_member_quiet_one_hour">一小时</string>
+    <string name="group_member_quiet_one_day">一天</string>
+    <string name="group_member_quiet_cancel">取消禁言</string>
+    <string name="group_member_quiet_err">设置禁言失败</string>
+    <string name="group_member_change_card">修改群名片</string>
+    <string name="group_member_already">已经是群成员</string>
+
+    <!-- friendship handle activity -->
+    <string name="friendship_handle_title">申请详情</string>
+    <string name="friendship_handle_ok">同意</string>
+    <string name="friendship_handle_reject">拒绝</string>
+    <string name="friendship_handle_word">附加信息</string>
+
+    <!-- about activity -->
+    <string name="about_title">关于</string>
+    <string name="about_imsdk">IMSDK版本</string>
+    <string name="about_qalsdk">QAL版本</string>
+    <string name="about_tlssdk">TLS版本</string>
+    <string name="about_env">网络环境</string>
+    <string name="about_log">日志等级</string>
+    <string name="about_env_normal">正式环境</string>
+    <string name="about_env_test">测试环境</string>
+    <string name="about_set_effect">设置成功，杀进程重启后生效</string>
+
+    <!-- message notify activity -->
+    <string name="message_notify_title">消息提醒</string>
+    <string name="message_notify_push">离线消息推送</string>
+    <string name="message_notify_c2c_music">自定义C2C消息推送声音</string>
+    <string name="message_notify_group_music">自定义群消息推送声音</string>
+</resources>
