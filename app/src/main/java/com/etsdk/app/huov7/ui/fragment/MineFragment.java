@@ -141,7 +141,6 @@ public class MineFragment extends AutoLazyFragment {
                 }
                 break;
             case R.id.video_ll:
-
                 break;
             case R.id.gift_ll:
                 MineGiftCouponListActivityNew.start(getContext(), MineGiftCouponListActivityNew.TYPE_GIFT, "礼包");
