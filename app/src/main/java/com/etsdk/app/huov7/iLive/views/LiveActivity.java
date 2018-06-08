@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -71,6 +72,7 @@ import com.etsdk.app.huov7.iLive.views.customviews.RadioGroupDialog;
 import com.etsdk.app.huov7.model.AudienceInfoModel;
 import com.etsdk.app.huov7.model.AudienceListModel;
 import com.etsdk.app.huov7.model.AudienceRequestModel;
+import com.etsdk.app.huov7.model.ILiveModel;
 import com.etsdk.app.huov7.ui.dialog.IliveMemberInfoDialog;
 import com.etsdk.app.huov7.ui.dialog.VoiceDialog;
 import com.etsdk.app.huov7.util.ImgUtil;
@@ -100,12 +102,16 @@ import com.tencent.ilivesdk.view.AVVideoView;
 import com.tencent.liteav.beauty.TXCVideoPreprocessor;
 import com.tencent.livesdk.ILVLiveManager;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import butterknife.ButterKnife;
 
 
 /**
@@ -178,7 +184,7 @@ public class LiveActivity extends BaseActivity implements LiveView, View.OnClick
         checkPermission();
         downVoiceMap = new HashMap<>();
         upVoiceMap = new HashMap<>();
-        memberInfoMap  = new HashMap<>();
+        memberInfoMap = new HashMap<>();
         mLiveHelper = new LiveHelper(this, this);
         mLiveListHelper = new LiveListViewHelper(this);
         mLinkHelper = new GetLinkSignHelper(this);
@@ -365,7 +371,7 @@ public class LiveActivity extends BaseActivity implements LiveView, View.OnClick
 
 
             initBackDialog();
-            initDetailDailog();
+//            initDetailDailog();
             startRecordAnimation();
         } else {
             // 初始化观众控件
@@ -562,9 +568,10 @@ public class LiveActivity extends BaseActivity implements LiveView, View.OnClick
         if (MySelfInfo.getInstance().getIdStatus() == Constants.HOST) {
             if (backDialog.isShowing() == false)
                 backDialog.show();
-        } else {
+        }else {
             callExitRoom();
         }
+
     }
 
     private void callExitRoom() {
@@ -637,7 +644,7 @@ public class LiveActivity extends BaseActivity implements LiveView, View.OnClick
         bDelayQuit = true;
         bReadyToChange = true;
         roomId.setText("" + CurLiveInfo.getTitle());
-        title_tv.setText( CurLiveInfo.getHostName());
+        title_tv.setText(CurLiveInfo.getHostName());
         ImgUtil.setImg(LiveActivity.this, CurLiveInfo.hostAvator, R.mipmap.icon_load, anchor_img);
         if (isSucc == true) {
             //主播心跳
@@ -796,17 +803,27 @@ public class LiveActivity extends BaseActivity implements LiveView, View.OnClick
             }
         }.start();
         if (MySelfInfo.getInstance().getIdStatus() == Constants.HOST) {
-            if ((getBaseContext() != null) && (null != mDetailDialog) && (mDetailDialog.isShowing() == false)) {
-                L.d(TAG, LogConstants.ACTION_HOST_QUIT_ROOM + LogConstants.DIV + MySelfInfo.getInstance().getId() + LogConstants.DIV + "quite room callback"
-                        + LogConstants.DIV + LogConstants.STATUS.SUCCEED + LogConstants.DIV + "id status " + id_status);
-                SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
-                editor.putBoolean("living", false);
-                editor.apply();
-                mDetailTime.setText(formatTime);
-                mDetailAdmires.setText("" + CurLiveInfo.getAdmires());
-                mDetailWatchCount.setText("" + watchCount);
-                mDetailDialog.show();
-            }
+//            if ((getBaseContext() != null) && (null != mDetailDialog) && (mDetailDialog.isShowing() == false)) {
+//                L.d(TAG, LogConstants.ACTION_HOST_QUIT_ROOM + LogConstants.DIV + MySelfInfo.getInstance().getId() + LogConstants.DIV + "quite room callback"
+//                        + LogConstants.DIV + LogConstants.STATUS.SUCCEED + LogConstants.DIV + "id status " + id_status);
+//                SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
+//                editor.putBoolean("living", false);
+//                editor.apply();
+//                mDetailTime.setText(formatTime);
+//                mDetailAdmires.setText("" + CurLiveInfo.getAdmires());
+//                mDetailWatchCount.setText("" + watchCount);
+//                mDetailDialog.show();
+//            }
+            ILiveModel model = new ILiveModel();
+            model.setFaceUrl(CurLiveInfo.getHostAvator());
+            model.setiLiveGift("0");
+            model.setiLiveNum(ilive_num.getText().toString());
+            model.setNickName(CurLiveInfo.getHostName());
+            model.setiLiveTime(formatTime);
+            Intent intent = new Intent();
+            intent.putExtra("iLiveDate", model);
+            setResult(102, intent);
+            finish();
         } else {
             clearOldData();
             finish();

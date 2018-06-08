@@ -19,23 +19,35 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import com.etsdk.app.huov7.R;
+import com.etsdk.app.huov7.base.AileApplication;
+import com.etsdk.app.huov7.http.AppApi;
 import com.etsdk.app.huov7.iLive.model.CurLiveInfo;
 import com.etsdk.app.huov7.iLive.model.MySelfInfo;
 import com.etsdk.app.huov7.iLive.utils.Constants;
 import com.etsdk.app.huov7.iLive.views.LiveActivity;
 import com.etsdk.app.huov7.model.GameBeanList;
+import com.etsdk.app.huov7.model.UserInfoResultBean;
 import com.etsdk.app.huov7.ui.AccountManageActivity;
 import com.etsdk.app.huov7.ui.ArticleActivity;
 import com.etsdk.app.huov7.ui.ChatRoomActivity;
 import com.etsdk.app.huov7.ui.DownloadManagerActivity;
+import com.etsdk.app.huov7.ui.GameListActivity;
 import com.etsdk.app.huov7.ui.LoginActivity;
 import com.etsdk.app.huov7.ui.MineGiftCouponListActivityNew;
 import com.etsdk.app.huov7.ui.NearbyActivity;
+import com.game.sdk.domain.BaseRequestBean;
+import com.game.sdk.http.HttpCallbackDecode;
+import com.game.sdk.http.HttpNoLoginCallbackDecode;
+import com.game.sdk.http.HttpParamsBuild;
+import com.game.sdk.util.GsonUtil;
+import com.kymjs.rxvolley.RxVolley;
 import com.liang530.log.L;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.tencent.filter.GLSLRender.br;
 
 
 /**
@@ -54,6 +66,7 @@ public class HunterHeaderView extends RelativeLayout {
     final int HOME_AD_RESULT = 1;
     int mSwitcherCount = 0;
     GameBeanList gameBeanList;
+    private int resID;
 
     public void setGameBeanList(GameBeanList gameBeanList) {
         this.gameBeanList = gameBeanList;
@@ -79,10 +92,18 @@ public class HunterHeaderView extends RelativeLayout {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.item1:
-                ChatRoomActivity.start(mContext);
+                if (AileApplication.isLogin) {
+                    ChatRoomActivity.start(mContext);
+                } else {
+                    LoginActivity.start(getContext());
+                }
                 break;
             case R.id.item2:
-                NearbyActivity.start(mContext);
+                if (AileApplication.isLogin) {
+                    NearbyActivity.start(mContext);
+                } else {
+                    LoginActivity.start(getContext());
+                }
                 break;
             case R.id.item3:
                 break;
@@ -104,8 +125,8 @@ public class HunterHeaderView extends RelativeLayout {
 //                mContext.startActivity(intent);
                 break;
             case R.id.item8:
+                GameListActivity.start(mContext, "BT游戏", true, true, 0, 0, 0, 0, 0, 0, 3, null);
                 break;
-
         }
     }
 

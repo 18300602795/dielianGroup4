@@ -121,6 +121,10 @@ public class MineFragment extends AutoLazyFragment {
 
             @Override
             public void onFailure(String code, String msg) {
+                if (info_ll  != null && off_line != null){
+                    info_ll.setVisibility(View.GONE);
+                    off_line.setVisibility(View.VISIBLE);
+                }
             }
         };
         httpCallbackDecode.setShowTs(true);
@@ -143,13 +147,22 @@ public class MineFragment extends AutoLazyFragment {
             case R.id.video_ll:
                 break;
             case R.id.gift_ll:
-                MineGiftCouponListActivityNew.start(getContext(), MineGiftCouponListActivityNew.TYPE_GIFT, "礼包");
+                if (resultBean != null) {
+                    MineGiftCouponListActivityNew.start(getContext(), MineGiftCouponListActivityNew.TYPE_GIFT, "礼包");
+                } else {
+                    LoginActivity.start(getContext());
+                }
                 break;
             case R.id.game_ll:
                 DownloadManagerActivity.start(getContext());
                 break;
             case R.id.post_ll:
-                ArticleActivity.start(getContext());
+                if (resultBean != null) {
+                    ArticleActivity.start(getContext());
+                } else {
+                    LoginActivity.start(getContext());
+                }
+
                 break;
             case R.id.tv_ll:
 //                Intent intent = new Intent(getActivity(), LiveActivity.class);

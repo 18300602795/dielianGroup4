@@ -30,7 +30,7 @@ android {
         jumboMode true
         preDexLibraries false
         incremental false
-        javaMaxHeapSize "4096m"
+        javaMaxHeapSize "3072m"
     }
     sourceSets {
         main {

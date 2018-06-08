@@ -22,12 +22,15 @@ import com.etsdk.app.huov7.iLive.model.MySelfInfo;
 import com.etsdk.app.huov7.iLive.utils.Constants;
 import com.etsdk.app.huov7.iLive.views.LiveActivity;
 import com.etsdk.app.huov7.model.AnchorModel;
+import com.etsdk.app.huov7.model.ILiveModel;
 import com.etsdk.app.huov7.model.LiveRooModel;
 import com.etsdk.app.huov7.model.RoomInfoModel;
 import com.etsdk.app.huov7.model.RoomListModel;
 import com.etsdk.app.huov7.model.RoomRequestBean;
+import com.etsdk.app.huov7.ui.dialog.IliveCloseDialog;
 import com.etsdk.app.huov7.util.StringUtils;
 import com.etsdk.app.huov7.view.CreateRoomView;
+import com.game.sdk.http.HttpCallbackDecode;
 import com.game.sdk.http.HttpNoLoginCallbackDecode;
 import com.game.sdk.http.HttpParamsBuild;
 import com.game.sdk.log.L;
@@ -35,12 +38,17 @@ import com.game.sdk.util.GsonUtil;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kymjs.rxvolley.RxVolley;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.etsdk.app.huov7.base.AileApplication.isLogin;
 
 
 /**
@@ -62,12 +70,14 @@ public class ChatRoomActivity extends ImmerseActivity {
     List<RoomInfoModel> models;
     private PopupWindow popupWindow;
     private int currentPage = 1;
+    private IliveCloseDialog closeDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
         ButterKnife.bind(this);
+        closeDialog = new IliveCloseDialog();
         tvTitleName.setText("聊天室");
         models = new ArrayList<>();
         GridLayoutManager manager = new GridLayoutManager(mContext, 2);
@@ -94,6 +104,15 @@ public class ChatRoomActivity extends ImmerseActivity {
             }
         });
         getRoomList();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101 && resultCode == 102){
+            ILiveModel model = (ILiveModel) data.getSerializableExtra("iLiveDate");
+            closeDialog.show(mContext, model);
+        }
     }
 
     private void bottomwindow(View view) {
@@ -131,7 +150,7 @@ public class ChatRoomActivity extends ImmerseActivity {
         final LiveRooModel baseRequestBean = new LiveRooModel();
         baseRequestBean.setName(des);
         HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(baseRequestBean));
-        HttpNoLoginCallbackDecode httpCallbackDecode = new HttpNoLoginCallbackDecode<AnchorModel>(mContext, httpParamsBuild.getAuthkey()) {
+        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<AnchorModel>(mContext, httpParamsBuild.getAuthkey()) {
             @Override
             public void onDataSuccess(AnchorModel data) {
                 MySelfInfo.getInstance().setMyRoomNum(data.getId());
@@ -145,7 +164,7 @@ public class ChatRoomActivity extends ImmerseActivity {
                 CurLiveInfo.setHostAvator(MySelfInfo.getInstance().getAvatar());
                 L.i("333", "id：" + MySelfInfo.getInstance().getId());
                 L.i("333", "roomNum：" + MySelfInfo.getInstance().getMyRoomNum());
-                startActivity(intent);
+                startActivityForResult(intent, 101);
             }
 
             @Override
@@ -166,7 +185,7 @@ public class ChatRoomActivity extends ImmerseActivity {
         requestBean.setPage(currentPage);
         requestBean.setOffset(10);
         HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(requestBean));
-        HttpNoLoginCallbackDecode httpCallbackDecode = new HttpNoLoginCallbackDecode<RoomListModel>(mContext, httpParamsBuild.getAuthkey()) {
+        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<RoomListModel>(mContext, httpParamsBuild.getAuthkey()) {
             @Override
             public void onDataSuccess(RoomListModel data) {
                 room_recycle.refreshComplete();
@@ -176,7 +195,6 @@ public class ChatRoomActivity extends ImmerseActivity {
                     } else {
                         adapter.addDates(data.getList());
                     }
-
                 } else {
                     if (currentPage == 1) {
                         adapter.clear();

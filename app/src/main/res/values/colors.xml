@@ -83,6 +83,7 @@
     <color name="light_red">#f26958</color>
     <color name="light_oringe">#eeb327</color>
     <color name="bg_gray_50">#50cccccc</color>
+    <color name="bg_gray_30">#30cccccc</color>
     <color name="bg_lowblack">#35343a</color>
     <color name="bg_black_80">#80000000</color>
     <color name="province_line_border">#C7C7C7</color>
