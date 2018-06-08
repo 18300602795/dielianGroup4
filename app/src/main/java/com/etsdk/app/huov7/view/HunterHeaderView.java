@@ -97,6 +97,7 @@ public class HunterHeaderView extends RelativeLayout {
                 } else {
                     LoginActivity.start(getContext());
                 }
+
                 break;
             case R.id.item2:
                 if (AileApplication.isLogin) {
