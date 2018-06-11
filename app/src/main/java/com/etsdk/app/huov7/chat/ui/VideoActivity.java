@@ -24,7 +24,7 @@ public class VideoActivity extends Activity implements SurfaceHolder.Callback, M
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_video);
+        setContentView(R.layout.activity_chat_video);
         videoSurface = (SurfaceView) findViewById(R.id.video);
         SurfaceHolder videoHolder = videoSurface.getHolder();
         videoHolder.addCallback(this);

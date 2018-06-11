@@ -3,33 +3,27 @@ package com.etsdk.app.huov7.ui.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.etsdk.app.huov7.R;
-import com.etsdk.app.huov7.adapter.MineAdapter;
 import com.etsdk.app.huov7.base.AileApplication;
 import com.etsdk.app.huov7.base.AutoLazyFragment;
 import com.etsdk.app.huov7.chat.utils.PushUtil;
 import com.etsdk.app.huov7.http.AppApi;
-import com.etsdk.app.huov7.iLive.model.CurLiveInfo;
 import com.etsdk.app.huov7.iLive.model.MySelfInfo;
-import com.etsdk.app.huov7.iLive.utils.Constants;
-import com.etsdk.app.huov7.iLive.views.LiveActivity;
 import com.etsdk.app.huov7.model.StartupResultBean;
 import com.etsdk.app.huov7.model.StatusObservable;
 import com.etsdk.app.huov7.model.UserInfo;
 import com.etsdk.app.huov7.model.UserInfoResultBean;
 import com.etsdk.app.huov7.ui.AccountManageActivity;
 import com.etsdk.app.huov7.ui.ArticleActivity;
-import com.etsdk.app.huov7.ui.DemoGuest;
 import com.etsdk.app.huov7.ui.DownloadManagerActivity;
 import com.etsdk.app.huov7.ui.LoginActivity;
 import com.etsdk.app.huov7.ui.MineGiftCouponListActivityNew;
+import com.etsdk.app.huov7.ui.RecordActivity;
 import com.etsdk.app.huov7.update.UpdateVersionDialog;
 import com.etsdk.app.huov7.update.UpdateVersionService;
 import com.game.sdk.domain.BaseRequestBean;
@@ -44,28 +38,14 @@ import com.liang530.views.imageview.roundedimageview.RoundedImageView;
 import com.tencent.TIMCallBack;
 import com.tencent.TIMFriendshipManager;
 import com.tencent.TIMGroupManager;
-import com.tencent.TIMManager;
-import com.tencent.TIMUser;
 import com.tencent.ilivesdk.ILiveCallBack;
 import com.tencent.ilivesdk.core.ILiveLoginManager;
 import com.tencent.qcloud.presentation.event.MessageEvent;
-import com.tencent.qcloud.sdk.Constant;
-import com.tencent.qcloud.tlslibrary.service.TLSService;
 
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import tencent.tls.platform.TLSErrInfo;
-import tencent.tls.platform.TLSHelper;
-import tencent.tls.platform.TLSPwdLoginListener;
-import tencent.tls.platform.TLSStrAccRegListener;
-import tencent.tls.platform.TLSUserInfo;
-
-import static android.R.attr.data;
-import static android.R.attr.theme;
-import static com.etsdk.app.huov7.base.AileApplication.groupId;
-import static com.tencent.qalsdk.service.QalService.context;
 
 
 /**
@@ -121,7 +101,7 @@ public class MineFragment extends AutoLazyFragment {
 
             @Override
             public void onFailure(String code, String msg) {
-                if (info_ll  != null && off_line != null){
+                if (info_ll != null && off_line != null) {
                     info_ll.setVisibility(View.GONE);
                     off_line.setVisibility(View.VISIBLE);
                 }
@@ -145,6 +125,7 @@ public class MineFragment extends AutoLazyFragment {
                 }
                 break;
             case R.id.video_ll:
+                RecordActivity.start(getContext());
                 break;
             case R.id.gift_ll:
                 if (resultBean != null) {

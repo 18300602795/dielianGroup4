@@ -205,7 +205,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="@color/aile_line_gray" />
+        android:background="@color/aile_line_gray"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/tv_ll"
@@ -214,7 +215,8 @@
         android:background="@drawable/btn_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="wrap_content"

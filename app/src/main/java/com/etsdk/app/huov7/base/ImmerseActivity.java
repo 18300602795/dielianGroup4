@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.etsdk.app.huov7.R;
 import com.etsdk.app.huov7.service.HuoSdkService;
@@ -84,5 +85,9 @@ public class ImmerseActivity extends BaseActivity {
         }else{
             huo_sdk_rl_title.setVisibility(View.GONE);
         }
+    }
+
+    protected void showToastMsg(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }
