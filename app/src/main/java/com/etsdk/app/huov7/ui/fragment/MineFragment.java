@@ -98,7 +98,6 @@ public class MineFragment extends AutoLazyFragment {
                     off_line.setVisibility(View.VISIBLE);
                 }
             }
-
             @Override
             public void onFailure(String code, String msg) {
                 if (info_ll != null && off_line != null) {
